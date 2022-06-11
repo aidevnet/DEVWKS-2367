@@ -1,0 +1,109 @@
+.dashboard-header {
+	display: flex;
+	flex: 0 0 35px;
+	background-color: #ffffff;
+	color: rgba(94, 96, 98, 1);
+	border-bottom: 1px solid rgba(226, 226, 226, 1);
+	overflow: hidden;
+}
+
+	.dashboard-header-container {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		height: 100%;
+		margin: 0 auto;
+		padding: 0 20px;
+		width: 100%;
+	}
+
+	.dashboard-header-left {
+		display: flex;
+		justify-content: flex-start;
+		align-items: center;
+		padding-right: 20px;
+	}
+
+		.dashboard-title {
+		    height: 100%;
+		    margin: 0;
+		    padding-left: 10px;
+		    text-align: left;
+		    font-size: 0.8rem;
+		    font-weight: 500;
+		    white-space: nowrap;
+		}
+
+		.material-icons.md-18.dashboard {
+			height: 100%;
+		    margin: 0;
+		    text-align: left;
+			font-size: 18px;
+		}
+
+	.dashboard-header-right {
+		display: flex;
+		justify-content: flex-end;
+		align-items: center;
+	}
+
+		.dashboard-dropdown-container {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+		}
+
+			.dashboard-dropdown-container a.dropdown-button {
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				color: #5abfdf;
+			}
+
+			.dashboard-dropdown-container a.dropdown-button:hover {
+				color: rgba(94, 96, 98, 1);
+				text-decoration: none;
+			}
+
+			.dashboard-dropdown-container a.dropdown-button .active {
+				color: rgba(94, 96, 98, 1);
+			}
+
+		.dashboard-label {
+			display: flex;
+			padding-right: 20px;
+			height: 100%;
+		}
+
+			.dashboard-label-title {
+				display: flex;
+			    height: 100%;
+			    margin: 0;
+			    text-align: left;
+			    font-size: 0.8rem;
+			    font-weight: 300;
+			}
+
+			.material-icons.md-18 {
+				font-size: 18px;
+			}
+
+			.dashboard-label .material-icons.md-18.error, .dashboard-label .material-icons.md-18.warning, .dashboard-label .material-icons.md-18.normal {
+				display: flex;
+				height: 100%;
+			    margin: 0;
+				padding-right: 5px;
+			    text-align: left;
+			}
+
+				.material-icons.md-18.error {
+					color: #ff6e56;
+				}
+
+				.material-icons.md-18.warning {
+					color: #ffd562;
+				}
+
+				.material-icons.md-18.normal {
+					color: #90cc84;
+				}

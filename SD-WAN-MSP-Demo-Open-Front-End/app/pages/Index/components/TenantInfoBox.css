@@ -1,0 +1,222 @@
+.tenant-info-box {
+	display: flex;
+	flex: 0 1 auto;
+	flex-direction: column;
+	justify-content: flex-start;
+	background-color: rgba(255, 255, 255, 1);
+	border-left: 1px solid rgba(226, 226, 226, 1);
+	overflow-y: auto;
+	overflow-x: hidden;
+	transition: width 1s ease;
+}
+
+.tenant-info-box.active {
+	width: calc(50% - 74px);
+}
+
+.tenant-info-box.inactive {
+	width: 0;
+}
+
+.tenant-info-box.hidden {
+	height: 0;
+}
+
+.tenant-info-box-row {
+	display: flex;
+	flex: 0 0 auto;
+	flex-direction: row;
+	padding: 5px 10px;
+	justify-content: center;
+	align-items: center;
+}
+
+.tenant-info-box-row.first {
+	padding-top: 10px;
+}
+
+.tenant-info-box-row.last {
+	padding-bottom: 10px;
+}
+
+	.tenant-info-box-summary {
+		max-width: 100%;
+		display: flex;
+		flex: 1 0 auto;
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: center;
+	}
+
+		.tenant-info-box-summary-title {
+			display: flex;
+			flex: 0 0 auto;
+			flex-direction: column;
+			max-height: 40px;
+			justify-content: center;
+			font-size: 0.8rem;
+			font-weight: 500;
+			padding: 5px;
+			color: rgba(94, 96, 98, 1);
+			white-space: nowrap;
+			overflow-x: hidden;
+		}
+
+		.tenant-info-box-summary-btn {
+			display: flex;
+			flex: 0 0 auto;
+			flex-direction: column;
+			max-height: 40px;
+			justify-content: center;
+			font-size: 0.8rem;
+			font-weight: 500;
+			padding: 5px;
+			color: rgba(255, 255, 255, 1);
+			background-color: #5abfdf;
+			white-space: nowrap;
+			overflow-x: hidden;
+		}
+
+	.tenant-info-box-item {
+		max-width: 100%;
+		display: flex;
+		flex: 1 0 auto;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		background-color: rgba(255, 255, 255, 1);
+		border: 1px solid rgba(226, 226, 226, 1);
+		overflow-x: hidden;
+	}
+
+	.tenant-info-box-item.last {
+		margin-top: 0;
+	}
+
+	.tenant-info-box-title {
+		display: flex;
+		flex: 0 0 auto;
+		flex-direction: column;
+		max-height: 30px;
+		width: 100%;
+		justify-content: center;
+		font-size: 0.7rem;
+		font-weight: 500;
+		padding: 5px;
+		background-color: rgba(250, 250, 250, 1);
+		color: rgba(94, 96, 98, 1);
+		border-bottom: 1px solid rgba(255, 255, 255, 1);
+		white-space: nowrap;
+		overflow-x: hidden;
+	}
+
+	.tenant-info-box-stats-container {
+		display: flex;
+		flex: 0 0 auto;
+		flex-direction: row;
+		width: 100%;
+		padding: 40px 0;
+		justify-content: space-between;
+		align-items: center;
+		overflow: hidden;
+	}
+
+	.tenant-info-box-stats-item {
+		display: flex;
+		flex: 0 0 auto;
+		flex-direction: column;
+		height: 80px;
+		width: calc(100% / 3);
+		padding: 10px;
+		justify-content: center;
+		align-items: center;
+		text-align: center;
+		border-right: 1px solid rgba(226, 226, 226, 1);
+		white-space: nowrap;
+		overflow: hidden;
+	}
+
+	.tenant-info-box-stats-item.last {
+		border-right: 0;
+	}
+
+		.tenant-info-box-stats-item-number {
+			font-size: 1.5rem;
+			font-weight: 300;
+		}
+
+			.tenant-info-box-stats-item-number.normal {
+				color: #90cc84;
+			}
+
+			.tenant-info-box-stats-item-number.warning {
+				color: #ffd562;
+			}
+
+			.tenant-info-box-stats-item-number.error {
+				color: #ff6e56;
+			}
+
+			.tenant-info-box-stats-item-number.zero {
+				color: rgba(94, 96, 98, 1);
+			}
+
+		.tenant-info-box-stats-item-text {
+			display: flex;
+			flex-direction: row;
+			color: rgba(94, 96, 98, 1);
+			font-size: 0.9rem;
+			font-weight: 400;
+			justify-content: center;
+			align-items: center;
+		}
+
+	.tenant-info-box-stats-container-col {
+		display: flex;
+		flex: 1 0 auto;
+		flex-direction: column;
+		width: 100%;
+		padding: 20px;
+		justify-content: space-between;
+		align-items: center;
+		overflow: hidden;
+	}
+
+	.tenant-info-box-stats-item-col {
+		display: flex;
+		flex: 0 0 auto;
+		flex-direction: row;
+		height: calc(40px);
+		width: 100%;
+		padding: 5px 0;
+		justify-content: space-between;
+		align-items: center;
+		text-align: left;
+		border-bottom: 1px solid rgba(226, 226, 226, 1);
+		white-space: nowrap;
+		overflow: hidden;
+	}
+
+	.tenant-info-box-stats-item-col.last {
+		border-bottom: 0;
+	}
+
+		.tenant-info-box-stats-item-text-col {
+			display: flex;
+			flex-direction: row;
+			color: rgba(94, 96, 98, 1);
+			font-size: 0.8rem;
+			font-weight: 500;
+			justify-content: center;
+			align-items: center;
+		}
+
+			.tenant-info-box-stats-item-text-col .material-icons.md-18 {
+				padding-right: 5px;
+			}
+
+		.tenant-info-box-stats-item-number-col {
+			font-size: 0.8rem;
+			font-weight: 500;
+			color: rgba(94, 96, 98, 1);
+		}

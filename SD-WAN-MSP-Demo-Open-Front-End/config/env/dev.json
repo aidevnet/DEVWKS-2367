@@ -1,0 +1,20 @@
+{
+  "css": {
+    "font-awesome": "https://static.production.devnetcloud.com/fontawesome/css/fontawesome-all.min.css",
+    "platform-sdk": "https://devnetapps.cisco.com/platformsdk/sdk.css",
+    "*app": "/styles/style.css"
+  },
+  "js": {
+    "google_analytics": "https://www.google-analytics.com/analytics.js",
+    "analytics-sdk": "https://devnetapps.cisco.com/analyticSDK/sdk.js",
+    "platform-sdk": "https://devnetapps.cisco.com/platformsdk/sdk.js",
+    "*app": "/app.js"
+  },
+  "window": {
+    "global_window_variable": "devnet"
+  },
+  "config": {
+    "BASENAME": "sd-wan-msp-dashboard-demo",
+    "API_SERVER": "http://localhost:8080"
+  }
+}

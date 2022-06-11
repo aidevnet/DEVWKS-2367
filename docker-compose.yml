@@ -1,0 +1,12 @@
+version: '3'
+services:
+  backend:
+    build: 
+      context: ./SD-WAN-MSP-Demo-Open-Back-End
+    ports:
+      - "8080:8080"
+  frontend:
+    build:
+      context: ./SD-WAN-MSP-Demo-Open-Front-End
+    ports:
+      - "8081:8081"

@@ -1,0 +1,28 @@
+.tenant-count {
+	display: flex;
+	flex-direction: column;
+	flex: 0 0 auto;
+	max-height: 150px;
+	width: 150px;
+	margin: 0;
+	justify-content: center;
+	text-align: center;
+	position: relative;
+	background-color: #5abfdf;
+	color: #ffffff;
+	border-right: 1px solid rgba(226, 226, 226, 1);
+	overflow-x: hidden;
+	overflow-y: auto;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+
+	.tenant-count-title-count {
+		font-size: 1.5rem;
+		font-weight: 400;
+	}
+
+	.tenant-count-title-text {
+		font-size: 1rem;
+		font-weight: 300;
+	}

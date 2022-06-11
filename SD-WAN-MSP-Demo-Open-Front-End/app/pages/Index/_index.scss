@@ -1,0 +1,45 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  background-color: #eff3f8;
+  height: 100%;
+}
+
+#root {
+  height: 100%;
+}
+
+#root > div {
+  height: 100%;
+}
+
+.dashboard-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.text-decoration-none {
+  text-decoration: none !important;
+}
+
+.sd-wan-msp-demo {
+  padding: 30px 0;
+  background: #f9f9f9;
+
+  h1 {
+    font-weight: 200;
+    margin: 45px 0 20px;
+    font-family: CiscoSans;
+    font-size: 38px;
+    letter-spacing: 0;
+    color: #333333;
+    text-align: center;
+  }
+}

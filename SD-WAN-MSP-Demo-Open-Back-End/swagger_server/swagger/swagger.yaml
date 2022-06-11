@@ -1,0 +1,315 @@
+---
+swagger: "2.0"
+info:
+  description: "This is an SD-WAN Multi Tenant Service"
+  version: "1.0.0"
+  title: "MSP Multi Tenant SD-WAN REST API"
+  termsOfService: ""
+  contact:
+    email: "ailiesiu@cisco.com"
+  license:
+    name: "Apache 2.0"
+    url: "http://www.apache.org/licenses/LICENSE-2.0.html"
+host: "localhost:8080"
+basePath: "/v1"
+tags:
+- name: "operation"
+  description: "Everything about operations"
+  externalDocs:
+    description: "Find out more"
+    url: "http://localhost:8080"
+- name: "info"
+  description: "Useful Info"
+schemes:
+- "http"
+paths:
+  /info/tenants:
+    get:
+      tags:
+      - "info"
+      summary: "Retrieve a list of tenants"
+      description: ""
+      operationId: "get_tenants"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters: []
+      responses:
+        200:
+          description: "successful operation"
+          schema:
+            type: "array"
+            items:
+              $ref: "#/definitions/Tenant"
+        405:
+          description: "Invalid"
+      x-swagger-router-controller: "swagger_server.controllers.info_controller"
+  /info/vsmarts_status:
+    get:
+      tags:
+      - "info"
+      summary: "Retrieve a list of vSmart devices status"
+      description: ""
+      operationId: "vsmarts_status"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters: []
+      responses:
+        200:
+          description: "successful operation"
+          schema:
+            type: "array"
+            items:
+              $ref: "#/definitions/vDevice"
+        405:
+          description: "Invalid"
+      x-swagger-router-controller: "swagger_server.controllers.info_controller"
+  /info/vedges_status:
+    get:
+      tags:
+      - "info"
+      summary: "Retrieve a list of vEdge devices status"
+      description: ""
+      operationId: "vedges_status"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters: []
+      responses:
+        200:
+          description: "successful operation"
+          schema:
+            type: "array"
+            items:
+              $ref: "#/definitions/vEdge"
+        405:
+          description: "Invalid"
+      x-swagger-router-controller: "swagger_server.controllers.info_controller"
+  /info/control_status:
+    get:
+      tags:
+      - "info"
+      summary: "Retrieve the control plane status"
+      description: ""
+      operationId: "control_status"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters: []
+      responses:
+        200:
+          description: "successful operation"
+          schema:
+            type: "array"
+            items:
+              $ref: "#/definitions/vControl"
+        405:
+          description: "Invalid"
+      x-swagger-router-controller: "swagger_server.controllers.info_controller"
+  /info/site_health:
+# To be completed during the workshop
+  /operation/create_tenant:
+    post:
+      tags:
+      - "operation"
+      summary: "Create a new tenant"
+      description: ""
+      operationId: "create_tenant"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+      - in: "body"
+        name: "body"
+        description: "Details on the new tenant request"
+        required: true
+        schema:
+          $ref: "#/definitions/CreateTenant"
+      responses:
+        201:
+          description: "Deployment started"
+          schema:
+            $ref: "#/definitions/inline_response_201"
+        405:
+          description: "Invalid"
+      x-swagger-router-controller: "swagger_server.controllers.info_controller"
+securityDefinitions:
+  api_key:
+    type: "apiKey"
+    name: "api_key"
+    in: "header"
+  user_key:
+    type: "apiKey"
+    name: "user_key"
+    in: "header"
+definitions:
+  Tenant:
+    type: "object"
+    properties:
+      tenantName:
+        type: "string"
+      vmanageIp:
+        type: "string"
+      vmanagePassword:
+        type: "string"
+      vmanageUsername:
+        type: "string"
+    example:
+      tenantName: "tenantName"
+      vmanageIp: "vmanageIp"
+      vmanagePassword: "vmanagePassword"
+      vmanageUsername: "vmanageUsername"
+  vDevice:
+    type: "object"
+    properties:
+      vmanageIp:
+        type: "string"
+      data:
+        type: "array"
+        items:
+          type: "object"
+          properties:
+            count:
+              type: "integer"
+            error:
+              type: "integer"
+            name:
+              type: "string"
+            new:
+              type: "integer"
+            normal:
+              type: "integer"
+            type:
+              type: "string"
+            warning:
+              type: "integer"
+  vControl:
+    type: "object"
+    properties:
+      vmanageIp:
+        type: "string"
+      system-ip:
+        type: "string"
+      vsmart-control-connections:
+        type: "integer"
+      expected-control-connections:
+        type: "integer"
+      rebootCount:
+        type: "integer"
+      crashCount:
+        type: "integer"
+    example:
+      vmananageIp: "vmanageIp"
+      system-ip: "system-ip"
+      vsmart-control-connections: "vsmart-control-connections"
+      expected-control-connections: "expected-control-connections"
+      rebootCount: "rebootCount"
+      crashCount: "crashCount"
+  vEdge:
+    type: "object"
+    properties:
+      vmanageIp:
+        type: "string"
+      data:
+        type: "array"
+        items:
+          type: "object"
+          properties:
+            count:
+              type: "integer"
+            error:
+              type: "integer"
+            name:
+              type: "string"
+            normal:
+              type: "integer"
+            warning:
+              type: "integer"     
+  vSite:
+    type: "object"
+    properties:
+      vmanageIp:
+        type: "string"
+      system-ip:
+        type: "string"
+      deviceId:
+        type: "string"
+      hostname:
+        type: "string"
+      reachability:
+        type: "string"
+      status:
+        type: "string"
+      personality:
+        type: "string"
+      bfdSessionsUp:
+        type: "integer"
+      bfdSessions:
+        type: "integer"
+    example:
+      vmanageIp: "vmanageIp"
+      system-ip: "system-ip"
+      deviceId: "deviceId"
+      hostname: "hostname"
+      reachability: "reachability"
+      status: "status"
+      personality: "personality"
+      bfdSessionsUp: "bfdSessionsUp"
+      bfdSessions: "bfdSessions"
+  CreateTenant:
+    type: "object"
+    properties:
+      vmanageIp:
+        type: "string"
+      vmanageUsername:
+        type: "string"
+      vmanagePassword:
+        type: "string"
+      port:
+        type: "string"
+      tenantName:
+        type: "string"
+    example:
+      port: "8443"
+      vmanageIp: "vmanageIp"
+      vmanageUsername: "vmanageUsername"
+      vmanagePassword: "vmanagePassword"
+      tenantName: "tenantName"
+  inline_response_201:
+    properties:
+      deploymentId:
+        type: "string"
+      status_url:
+        type: "string"
+    example:
+      deploymentId: "deploymentId"
+      status_url: "status_url"
+  inline_response_200:
+    properties:
+      status:
+        type: "string"
+    example:
+      status: "status"
+  Operation_request:
+    properties:
+      method:
+        type: "string"
+        enum:
+        - "GET"
+        - "POST"
+        - "PUT"
+        - "DELETE"
+      url:
+        type: "string"
+    example:
+      method: "GET"
+      url: "url"
+externalDocs:
+  description: "Find out more about Swagger"
+  url: "http://swagger.io"
