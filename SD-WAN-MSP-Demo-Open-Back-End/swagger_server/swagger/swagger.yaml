@@ -112,7 +112,27 @@ paths:
           description: "Invalid"
       x-swagger-router-controller: "swagger_server.controllers.info_controller"
   /info/site_health:
-# To be completed during the workshop
+    get:
+      tags:
+      - "info"
+      summary: "Retrieve the site health status"
+      description: ""
+      operationId: "site_health"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters: []
+      responses:
+        200:
+          description: "successful operation"
+          schema:
+            type: "array"
+            items:
+              $ref: "#/definitions/vSite"
+        405:
+          description: "Invalid"
+      x-swagger-router-controller: "swagger_server.controllers.info_controller"
   /operation/create_tenant:
     post:
       tags:
