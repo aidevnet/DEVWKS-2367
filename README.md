@@ -1,8 +1,8 @@
-## Cisco SD-WAN powered by Viptela
+## Cisco Catalyst SD-WAN
 
-The Cisco SD-WAN Solution is a cloud-delivered overlay WAN architecture that facilitates digital and cloud transformation for enterprises. It significantly reduces WAN costs and time to deploy new services.
+The Cisco Catalyst SD-WAN Solution is a cloud-delivered overlay WAN architecture that facilitates digital and cloud transformation for enterprises. It significantly reduces WAN costs and time to deploy new services.
 
-Cisco SD-WAN builds a robust security architecture that's crucial for hybrid networks. It provides a strong policy framework.
+Cisco Catalyst SD-WAN builds a robust security architecture that's crucial for hybrid networks. It provides a strong policy framework.
 
 The solution has been deployed in every major industry. It solves many critical enterprise problems, including:
 
@@ -14,7 +14,7 @@ The solution has been deployed in every major industry. It solves many critical 
 
 ## Project SD-WAN MSP dashboard
 
-The goal of this project is to provide a one pane of glass application to Cisco SD-WAN users and enterprises with particularly MSPs (Managed Service Providers) in mind. The application gives users visibility into the status of their Cisco SD-WAN fabric. It has two components: a Python based back-end REST API that interacts with the vManage REST API and a React based front-end that displays the data to the user. The back-end acts as a middleware between the single tenant vManage instances and the front-end. The front-end part of the application interacts with the back-end REST API and gives the users a similar interface to the one vManage has for multi-tenant environments.
+The goal of this project is to provide a one pane of glass application to Cisco Catalyst SD-WAN users and enterprises with particularly MSPs (Managed Service Providers) in mind. The application gives users visibility into the status of their Cisco Catalyst SD-WAN fabric. It has two components: a Python based back-end REST API that interacts with the vManage REST API and a React based front-end that displays the data to the user. The back-end acts as a middleware between the single tenant vManage instances and the front-end. The front-end part of the application interacts with the back-end REST API and gives the users a similar interface to the one vManage has for multi-tenant environments.
 
 Users of the application can monitor with this application:
 
@@ -28,7 +28,7 @@ Users of the application can monitor with this application:
 To use this application you will need:
 
 * Docker 18.06+
-* Cisco SD-WAN single tenant fabrics
+* Cisco Catalyst SD-WAN single tenant fabrics
 
 ## Install and setup
 
@@ -39,7 +39,7 @@ docker-compose build --no-cache
 docker-compose up
 ```
 
-You can access the dashboard by default at `localhost:8081`.
+You can access the dashboard by default at `localhost:8671`.
 
 ### Exposing dashboard on the internet
 
