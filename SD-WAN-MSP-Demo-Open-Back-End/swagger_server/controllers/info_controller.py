@@ -178,8 +178,36 @@ def control_status():
     return control
 
 def site_health():
-    print("Challenge")
-# To be completed during the workshop
+    try:
+        with open('/usr/src/app/swagger_server/controllers/tenants.json') as f:
+            results = json.load(f)
+    except:
+        print("Unexpected error:", sys.exc_info()[0])
+
+    #items = result['data']
+
+    site = []
+    for result in results:
+        sdwanp = rest_api_lib(result['vmanageIp'], result['vmanageUsername'], result['vmanagePassword'], result['port'])
+
+        responses = json.loads(sdwanp.get_request('device'))['data']
+
+        for response in responses:
+            if response['device-type'] == "vedge":
+                s = {
+                    "vmanageIp": result['vmanageIp'],
+                    "system-ip": response['system-ip'],
+                    "deviceId": response['deviceId'],
+                    "hostname": response['host-name'],
+                    "reachability": response['reachability'],
+                    "status": response['status'],
+                    "personality": response['personality'],
+                    "bfdSessionsUp": response['bfdSessionsUp'],
+                    "bfdSessions": response['bfdSessions']
+                    }
+                site.append(s)
+
+    return site
 
 def append_to_json(filepath, data):
     """
