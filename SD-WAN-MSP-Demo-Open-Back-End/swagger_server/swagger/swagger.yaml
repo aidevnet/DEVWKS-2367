@@ -10,14 +10,14 @@ info:
   license:
     name: "Apache 2.0"
     url: "http://www.apache.org/licenses/LICENSE-2.0.html"
-host: "localhost:8080"
+host: "localhost:8670"
 basePath: "/v1"
 tags:
 - name: "operation"
   description: "Everything about operations"
   externalDocs:
     description: "Find out more"
-    url: "http://localhost:8080"
+    url: "http://localhost:8670"
 - name: "info"
   description: "Useful Info"
 schemes:
