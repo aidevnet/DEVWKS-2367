@@ -12,6 +12,7 @@ COPY requirements.txt /usr/src/app/
 RUN pip3 install --no-cache-dir -r requirements.txt
 RUN pip install connexion[swagger-ui]
 RUN pip3 install -U flask_cors
+RUN pip install --force-reinstall git+https://github.com/benoitc/gunicorn.git@master
 
 COPY . /usr/src/app
 
