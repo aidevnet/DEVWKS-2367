@@ -16,4 +16,4 @@ React web application front end for integration with MSP Single Tenant SD-WAN RE
 1. Navigate to the dashboard root directory.
 2. Run `npm i` to install dependencies.
 3. Run `npm start` to spin up the front end app.
-4. Open [http://localhost:8081](http://localhost:8671) to see the dashboard in action.
+4. Open [http://localhost:8671](http://localhost:8671) to see the dashboard in action.
