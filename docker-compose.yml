@@ -4,9 +4,9 @@ services:
     build: 
       context: ./SD-WAN-MSP-Demo-Open-Back-End
     ports:
-      - "8080:8080"
+      - "8670:8670"
   frontend:
     build:
       context: ./SD-WAN-MSP-Demo-Open-Front-End
     ports:
-      - "8081:8081"
+      - "8671:8671"
