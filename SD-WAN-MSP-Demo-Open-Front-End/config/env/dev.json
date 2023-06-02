@@ -15,6 +15,6 @@
   },
   "config": {
     "BASENAME": "sd-wan-msp-dashboard-demo",
-    "API_SERVER": "http://localhost:8080"
+    "API_SERVER": "http://localhost:8670"
   }
 }
