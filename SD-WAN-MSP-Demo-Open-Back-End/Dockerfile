@@ -15,6 +15,6 @@ RUN pip3 install -U flask_cors
 
 COPY . /usr/src/app
 
-EXPOSE 8080
+EXPOSE 8670
 
-CMD gunicorn -b 0.0.0.0:8080 swagger_server.app:app
+CMD gunicorn -b 0.0.0.0:8670 swagger_server.app:app
